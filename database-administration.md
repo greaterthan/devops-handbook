@@ -10,7 +10,7 @@ The credentials are
 
 **User: **ud6dfgef6bi48k
 
-Password can be found on the database credentials page on \[Heroku\]\([https://data.heroku.com/datastores/639d09f0-d0f9-45e9-92fa-74701591ef14\](https://data.heroku.com/datastores/639d09f0-d0f9-45e9-92fa-74701591ef14%29\)
+Password can be found on the database credentials page on [Heroku](https://data.heroku.com/datastores/639d09f0-d0f9-45e9-92fa-74701591ef14)
 
 ## New production database on AWS
 
