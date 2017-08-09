@@ -19,9 +19,9 @@ git clone https://github.com/greaterthan/aws-deploy.git
 cp aws-deploy/env aws-deploy/start /opt/cobudget-api
 ```
 
-git clone https://github.com/greaterthan/aws-deploy.git
+git clone [https://github.com/greaterthan/aws-deploy.git](https://github.com/greaterthan/aws-deploy.git)
 
-Now edit the `env` file. The database env could be 
+Now edit the `env` file. The database env could be
 
 ```
 DATABASE_URL="postgres://cobudget:<password>@cobudget-prod.cird90svlmvv.us-west-2.rds.amazonaws.com:5432/cobudget_prod"
@@ -39,6 +39,16 @@ And finally, start the server
 ```
 ./start
 ```
+
+That's it. The server is now running.
+
+### What's missing.
+
+* Automatic restart when the machine boot. Build a systemd unit script.
+  * Find out how to stop the server.
+  * Find out if we need a PID file
+* An easy way to update with a new version.
+* Deploy using Travis \(including testing\)
 
 
 
