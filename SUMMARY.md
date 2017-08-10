@@ -5,4 +5,5 @@
 * [Setting up EC2 instance](setting-up-ec2-instance.md)
 * [Database administration](database-administration.md)
 * [Manual install of cobudget-api](manual-install-of-cobudget-api.md)
+* [What's missing](whats-missing.md)
 
