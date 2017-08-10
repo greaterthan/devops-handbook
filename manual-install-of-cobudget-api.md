@@ -1,5 +1,11 @@
 # Manual install of cobudget-api
 
+## Introduction
+
+The server will be set up to use blue/green deployments. This will done by making two directories, incidentally named `blue` and `green` and set a symbolic link `current` that points to the current release in production.
+
+A new release can then be prepared in the directory not currently in use and the change can happen almost instantanously 
+
 ## First time install
 
 Create directy, adjust permissions and clone the `cobudget-api` github repo.
@@ -8,7 +14,10 @@ Create directy, adjust permissions and clone the `cobudget-api` github repo.
 cd /opt
 sudo mkdir cobudget-api
 sudo chown ubuntu cobudget-api
-git clone https://github.com/cobudget/cobudget-api.git
+cd cobudget-api
+mkdir green
+git clone https://github.com/cobudget/cobudget-api.git blue
+ln -s /opt/cobudget-api/blue current
 ```
 
 Get the `env` and `start` files and copy to the installed dir

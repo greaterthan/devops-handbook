@@ -41,5 +41,29 @@ gem install bundler
 
 ## Install and configure Nginx
 
+Install nginx
+
+```
+sudo apt install nginx
+```
+
+Get the nginx configuration files and copy them in place
+
+```
+cd
+git clone https://github.com/greaterthan/aws-deploy.git
+sudo cp aws-deploy/cobudget /etc/nginx/sites-available/
+sudo cp aws-deploy/cobudget_trace.conf /etc/nginx/conf.d/
+cd /etc/nginx/sites-enabled
+sudo rm default
+sudo ln -s /etc/nginx/sites-available/cobudget cobudget
+```
+
+Restart the nginx server
+
+```
+sudo systemctl restart nginx
+```
+
 
 
