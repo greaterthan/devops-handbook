@@ -4,11 +4,11 @@
 
 The server will be set up to use blue/green deployments. This will done by making two directories, incidentally named `blue` and `green` and set a symbolic link `current` that points to the current release in production.
 
-A new release can then be prepared in the directory not currently in use and the change can happen almost instantanously 
+A new release can then be prepared in the directory not currently in use and the change can happen almost instantanously
 
 ## First time install
 
-Create directy, adjust permissions and clone the `cobudget-api` github repo.
+Create directories, adjust permissions and clone the `cobudget-api` github repo.
 
 ```
 cd /opt
@@ -25,7 +25,7 @@ Get the `env` and `start` files and copy to the installed dir
 ```
 cd
 git clone https://github.com/greaterthan/aws-deploy.git
-cp aws-deploy/env aws-deploy/start /opt/cobudget-api
+cp aws-deploy/env aws-deploy/start /opt/cobudget-api/blue
 ```
 
 git clone [https://github.com/greaterthan/aws-deploy.git](https://github.com/greaterthan/aws-deploy.git)
