@@ -4,7 +4,9 @@
 
 The server will be set up to use blue/green deployments. This will done by making two directories, incidentally named `blue` and `green` and set a symbolic link `current` that points to the current release in production.
 
-A new release can then be prepared in the directory not currently in use and the change can happen almost instantanously
+A new release can then be prepared in the directory not currently in use and the change can happen almost instantanously.
+
+Rollback to the previous version can happen equally fast \(if there are no incompatible database changes\).
 
 ## First time install
 
@@ -25,7 +27,7 @@ Get the `env` and `start` files and copy to the installed dir
 ```
 cd
 git clone https://github.com/greaterthan/aws-deploy.git
-cp aws-deploy/env aws-deploy/start /opt/cobudget-api/blue
+cp aws-deploy/env aws-deploy/start /opt/cobudget-api/current
 ```
 
 git clone [https://github.com/greaterthan/aws-deploy.git](https://github.com/greaterthan/aws-deploy.git)
@@ -50,6 +52,30 @@ And finally, start the server
 ```
 
 That's it. The server is now running.
+
+### Running with systemd
+
+* Edit and copy the `env-vars` file to `/opt/cobudget-api/current`
+
+Copy the systemd config file 
+
+```
+sudo cp aws-deploy/cobudget-api.service /etc/systemd/system
+```
+
+Get systemd to read the file, start the server and enable for automatic start at boot
+
+```
+sudo systemctl daemon-reload
+sudo systemctl start cobudget-api
+sudo systemctl enable cobudget-api
+```
+
+You can check if the server has started with
+
+```
+sudo systemctl status cobudget-api.service
+```
 
 ### What's missing.
 
