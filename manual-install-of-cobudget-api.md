@@ -32,7 +32,7 @@ cp aws-deploy/env aws-deploy/start /opt/cobudget-api/current
 
 git clone [https://github.com/greaterthan/aws-deploy.git](https://github.com/greaterthan/aws-deploy.git)
 
-Now edit the `env` file. The database env could be
+Now edit the `env`  and `env-vars`  file. The database variable could be
 
 ```
 DATABASE_URL="postgres://cobudget:<password>@cobudget-prod.cird90svlmvv.us-west-2.rds.amazonaws.com:5432/cobudget_prod"
@@ -42,20 +42,10 @@ Install missing Postgresql dev files and install all packages
 
 ```
 sudo apt-get install postgresql-common libpq-dev
-bundle install
+/usr/local/lib/ruby-2.4.0/bin/bundle install
 ```
-
-And finally, start the server
-
-```
-./start
-```
-
-That's it. The server is now running.
 
 ### Running with systemd
-
-* Edit and copy the `env-vars` file to `/opt/cobudget-api/current`
 
 Copy the systemd config file
 
@@ -76,8 +66,6 @@ You can check if the server has started with
 ```
 sudo systemctl status cobudget-api.service
 ```
-
-
 
 
 

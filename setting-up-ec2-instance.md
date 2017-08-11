@@ -6,7 +6,7 @@
 
 ## Install Ruby
 
-Ruby is installed by using the \[these instructions\]\([https://gorails.com/deploy/ubuntu/16.04](https://gorails.com/deploy/ubuntu/16.04)\), replicated here.
+Ruby is installed under `/usr/local/lib`with each ruby version in it's own directory
 
 Install dependencies:
 
@@ -15,28 +15,47 @@ sudo apt-get update
 sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev nodejs
 ```
 
-Install Ruby 2.4.0 using `rbenv`
+Add the the current user `ubuntu`to the `staff` group
 
 ```
-cd
-git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
-echo 'eval "$(rbenv init -)"' >> ~/.bashrc
-exec $SHELL
+sudo usermod -a -G staff ubuntu
+```
 
-git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
-echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
-exec $SHELL
+Now log out and log back in for new group to take effect.
 
-rbenv install 2.4.0
-rbenv global 2.4.0
-ruby -v
+Install the latest version of [ruby-install](https://github.com/postmodern/ruby-install)
+
+Installation instructions for version 0.6.1 is replicated here
+
+```
+wget -O ruby-install-0.6.1.tar.gz https://github.com/postmodern/ruby-install/archive/v0.6.1.tar.gz
+tar -xzvf ruby-install-0.6.1.tar.gz
+cd ruby-install-0.6.1/
+sudo make install
+```
+
+### Installing ruby 2.4.0
+
+We will use `/usr/local/lib/ruby-2.4.0`
+
+Prepare the directory
+
+```
+sudo mkdir /usr/local/lib/ruby-2.4.0
+sudo chgrp staff /usr/local/lib/ruby-2.4.0
+sudo chmod 775 /usr/local/lib/ruby-2.4.0
+```
+
+Install ruby
+
+```
+ruby-install --install-dir /usr/local/lib/ruby-2.4.0 ruby 2.4.0
 ```
 
 And finally install `bundler`
 
 ```
-gem install bundler
+/usr/local/lib/ruby-2.4.0/bin/gem install bundler
 ```
 
 ## Install and configure Nginx
