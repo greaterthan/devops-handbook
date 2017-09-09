@@ -84,7 +84,13 @@ Restart the nginx server
 sudo systemctl restart nginx
 ```
 
-## 
+## Install SSL certificates using certbot
+
+Use the instructions from [certbot](https://certbot.eff.org/#ubuntuxenial-nginx)
+
+As the mail address for notifications, use `devops@greater.finance`
+
+Add HTTP2.0 capability by following [these instructions](https://www.bjornjohansen.no/enable-http2-on-nginx).
 
 
 
