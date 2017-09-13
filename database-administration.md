@@ -22,7 +22,7 @@ The credentials are
 
 **User:** cobudget
 
-Password is currently only known by Michael
+Password is currently only known by Michael and Juliana
 
 ## Moving a database to a new database instance
 
@@ -71,6 +71,4 @@ dropdb -h cobudget-prod.cird90svlmvv.us-west-2.rds.amazonaws.com -U cobudget cob
 ```
 
 and restart with creating the new database.
-
-
 
