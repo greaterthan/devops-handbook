@@ -47,10 +47,11 @@ sudo apt-get install postgresql-common libpq-dev
 
 ### Running with systemd
 
-Copy the systemd config file
+Copy the systemd config files
 
 ```
 sudo cp aws-deploy/cobudget-api.service /etc/systemd/system
+sudo cp awd-deploy/cobudget-dj.service /etc/systemd/system
 ```
 
 Get systemd to read the file, start the server and enable for automatic start at boot
@@ -59,12 +60,14 @@ Get systemd to read the file, start the server and enable for automatic start at
 sudo systemctl daemon-reload
 sudo systemctl start cobudget-api
 sudo systemctl enable cobudget-api
+sudo systemctl start cobudget-dj
+sudo systemctl enable cobudget-dj
 ```
 
 You can check if the server has started with
 
 ```
-sudo systemctl status cobudget-api.service
+sudo systemctl status cobudget-api.service cobudget-dj.service
 ```
 
 
