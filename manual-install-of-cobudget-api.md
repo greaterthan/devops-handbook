@@ -45,6 +45,19 @@ sudo apt-get install postgresql-common libpq-dev
 /usr/local/lib/ruby-2.4.0/bin/bundle install
 ```
 
+### Brief notes on new deployment
+
+* Remove the unused blue of green dir
+* Clone the api repo into the unused blue or green dir
+* Copy `env` , `env-vars` , `start`  and `config/database.yml` to the new dir
+
+And finally, change the symlink and restart the service
+
+```
+rm current; ln -s /opt/cobudget-api/blue/ current
+sudo systemctl restart cobudget-api
+```
+
 ### Running with systemd
 
 Copy the systemd config file
