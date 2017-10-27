@@ -63,7 +63,7 @@ sudo systemctl restart cobudget-api
 Copy the systemd config file
 
 ```
-sudo cp aws-deploy/cobudget-api.service /etc/systemd/system
+sudo cp aws-deploy/cobudget-* /etc/systemd/system
 ```
 
 Get systemd to read the file, start the server and enable for automatic start at boot
@@ -71,13 +71,19 @@ Get systemd to read the file, start the server and enable for automatic start at
 ```
 sudo systemctl daemon-reload
 sudo systemctl start cobudget-api
+sudo systemctl start cobudget-dj
+sudo systemctl start cobudget-digestemail.timer
 sudo systemctl enable cobudget-api
+sudo systemctl enable cobudget-dj
+sudo systemctl enable cobudget-digestemail.timer
 ```
 
 You can check if the server has started with
 
 ```
 sudo systemctl status cobudget-api.service
+sudo systemctl status cobudget-dj.service
+sudo systemctl status cobudget-digestemail.timer
 ```
 
 
