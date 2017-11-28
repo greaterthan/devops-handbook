@@ -51,6 +51,16 @@ sudo apt-get install postgresql-common libpq-dev
 * Clone the api repo into the unused blue or green dir
 * Copy `env` , `env-vars` , `start`  and `config/database.yml` to the new dir
 
+If there's a DB update, dumb the DB before the update, do the update and dump it again after. Just to be sure.
+
+```
+export PATH=$PATH:/usr/local/lib/ruby-2.4.0/bin
+. ./env
+pg_dump -h cobudget-prod.cird90svlmvv.us-west-2.rds.amazonaws.com -U cobudget -d cobudget_prod >cobudget-prod-<yymmdd>-before-update
+bundle exec rake db:migrate
+pg_dump -h cobudget-prod.cird90svlmvv.us-west-2.rds.amazonaws.com -U cobudget -d cobudget_prod >cobudget-prod-<yymmdd>-after-update
+```
+
 And finally, change the symlink and restart the service
 
 ```
