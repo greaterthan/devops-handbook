@@ -84,10 +84,9 @@ Cobudget is now accessible through this server on `/cb`
 
 ## Mailcatcher
 
-Mailcatcher can be accessed through port 1080. However if we map to a path like this
+If we set up a DNS to `mailcatcher.test.cobudget.co` (can be done easy by using wildcards), we can give access to mailcacther
 
 ```
-curl -i -X POST --url http://localhost:8001/apis/ --data 'name=mailcatcher' --data 'uris=/mail' --data 'upstream_url=http://localhost:1080'
+curl -i -X POST --url http://localhost:8001/apis/ --data 'name=mailcatcher' --data 'hosts=mailcatcher.test.cobudget.co' --data 'upstream_url=http://localhost:1080'
 ```
 
-We do get access to `mailcatcher`, but it doesn't work properly because it thinks it's running in the root.
