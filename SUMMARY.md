@@ -7,4 +7,5 @@
 * [Manual install of cobudget-api](manual-install-of-cobudget-api.md)
 * [Manual Procedures](manual-procedures.md)
 * [What's missing](whats-missing.md)
+* [Setting up an admin server](setting-up-an-admin-server.md)
 
