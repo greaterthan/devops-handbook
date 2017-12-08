@@ -70,7 +70,7 @@ sudo systemctl restart cobudget-api
 
 ### Running with systemd
 
-Copy the systemd config file
+Copy the systemd config files
 
 ```
 sudo cp aws-deploy/cobudget-* /etc/systemd/system
