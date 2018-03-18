@@ -1,7 +1,7 @@
 # Setting up EC2 instance
 
 * Add ssh keys to `.ssh/autohorized_keys` for standard user `ubuntu`
-* [Install docker-ce](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce)
+* Install docker \(see below\)
 * Install SSL certificates \(see below\)
 
 ## Install docker and setup a swarm
@@ -13,7 +13,6 @@ Initialize the swarm
 ```
 sudo docker swarm init
 ```
-
 
 ## Install SSL certificates using certbot
 
