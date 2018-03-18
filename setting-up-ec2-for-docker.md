@@ -6,9 +6,9 @@
 
 ## Install docker and setup a swarm
 
-[Install docker-ce](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce)
+First [Install docker-ce](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce)
 
-Initialize the swarm
+Then initialize the swarm
 
 ```
 sudo docker swarm init
