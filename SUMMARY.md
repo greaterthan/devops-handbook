@@ -8,4 +8,5 @@
 * [Manual Procedures](manual-procedures.md)
 * [What's missing](whats-missing.md)
 * [Setting up an admin server](setting-up-an-admin-server.md)
+* [Setting up EC2 for docker](setting-up-ec2-for-docker.md)
 
